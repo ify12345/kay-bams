@@ -10,10 +10,10 @@ export default function Footer() {
           Let's work on something great together!🤝
         </div>
         <div className="flex flex-col text-xl gap-[24px] lg:pr-[93px]">
-          <a href="">LinkedIn</a>
-          <a href="">X</a>
-          <a href="">Behance</a>
-          <a href="">Email</a>
+          <a target='_blank' href="https://www.linkedin.com/in/kayodebamidele?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+          <a target='_blank' href="https://x.com/kay_shib?t=KmNANu9vgAj1F_cubkfXVg&s=08">X</a>
+          <a target='_blank' href="https://www.behance.net/kayodebamidele">Behance</a>
+          <a href="mailto:bamidelekay@gmail.com">Email</a>
         </div>
         <div className="absolute right-0 bottom-1">
         <Link to="home" className="cursor-pointer ">

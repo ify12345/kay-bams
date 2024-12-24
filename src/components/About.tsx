@@ -23,7 +23,7 @@ export default function About() {
         </Link>
       </div>
 
-      <div className="flex items-center flex-col lg:flex-row  px-3 lg:px-[120px] gap-[24px] text-white xl:text-[40px] leading-[32px] xl:leading-[60px] py-10">
+      <div className="flex items-center flex-col-reverse lg:flex-row  px-3 lg:px-[120px] gap-[24px] text-white xl:text-[40px] leading-[32px] xl:leading-[60px] py-10">
         <div className="w-full lg:w-1/2 flex flex-col gap-[40px] ">
           <p className="max-w-[588px]">
             <span className="text-[#A192E4]">Hello!</span>My name is Kayode
@@ -44,7 +44,7 @@ export default function About() {
             to life!.
           </p>
         </div>
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <img src={Kay} alt="" className="w-full object-cover" />
         </div>
       </div>

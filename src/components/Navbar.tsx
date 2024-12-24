@@ -1,44 +1,40 @@
-import * as React from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { IoCloseSharp } from 'react-icons/io5';
-import { IoMail } from 'react-icons/io5';
+import * as React from 'react'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { IoCloseSharp } from 'react-icons/io5'
+import { IoMail } from 'react-icons/io5'
 import Logo from '@/assets/images/logo.png'
-import { Link } from 'react-scroll';
+import { Link } from 'react-scroll'
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false)
 
   React.useEffect(() => {
     if (menuOpen) {
-      document.body.classList.add('no-scroll');
+      document.body.classList.add('no-scroll')
     } else {
-      document.body.classList.remove('no-scroll');
+      document.body.classList.remove('no-scroll')
     }
 
     return () => {
-      document.body.classList.remove('no-scroll');
-    };
-  }, [menuOpen]);
+      document.body.classList.remove('no-scroll')
+    }
+  }, [menuOpen])
 
   // Function to handle link clicks
   const handleLinkClick = () => {
-    setMenuOpen(false);
-  };
+    setMenuOpen(false)
+  }
 
   return (
-    <main className="bg-[url('assets/images/grid-layer.png')] bg-cover bg-no-repeat bg-center relative z-30 text-white h-[700px]" id="home">
+    <main
+      className="bg-[url('assets/images/grid-layer.png')] bg-cover bg-no-repeat bg-center relative z-30 text-white min-h-[80vh] lg:h-[700px]"
+      id="home"
+    >
       <header className="h-24 top-0 w-full flex items-center text-white ">
         <div className="max-w-screen-2xl mx-auto px-4 lg:px-[120px] w-full flex items-center justify-between relative z-40">
-      
-            <a href="/">
-              <img
-                src={Logo}
-                width={220}
-                height={58}
-                alt="kay-bams"
-              />
-            </a>
-      
+          <a href="/">
+            <img src={Logo} width={220} height={58} alt="kay-bams" />
+          </a>
 
           <div className="hidden lg:flex items-center gap-[20px]">
             <button className="border border-[#55DB62] flex items-center py-[8px] px-[16px] gap-[8px] rounded-[40px]">
@@ -118,13 +114,16 @@ export default function Navbar() {
           </p>
         </div>
 
-        <button className="bg-white rounded-[40px] flex gap-2 lg:gap-4 items-center lg:py-[16px] p-2 lg:px-[24px] mt-[60px]">
+        <a
+          href="mailto:bamidelekay@gmail.com"
+          className="bg-white rounded-[40px] flex gap-2 lg:gap-4 items-center lg:py-[16px] p-2 lg:px-[24px] mt-[60px]"
+        >
           <IoMail color="#A192E4" size={24} />
           <p className="text-black text-sm lg:text-[24px] leading-[36px] font-[500]">
             Bamidelekay@gmail.com
           </p>
-        </button>
+        </a>
       </div>
     </main>
-  );
+  )
 }

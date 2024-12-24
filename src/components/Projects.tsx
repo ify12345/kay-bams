@@ -33,7 +33,7 @@ export default function Projects() {
   // Choose the appropriate projects based on selected category
   const projectsToDisplay = selectedCategory === 'web2' ? web2Projects : web3Projects
   return (
-    <div className="min-h-[100vh] lg:min-h-[100vh]" id="projects">
+    <div className="min-h-[100vh] lg:min-h-[100vh] py-6" id="projects">
       <div className="flex justify-between items-center px-3 lg:px-[120px]">
         <h1 className="text-3xl font-bold text-white">Selected Works👨🏽‍💻</h1>
         <Link to="about" className=" cursor-pointer">
