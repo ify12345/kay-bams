@@ -2,6 +2,7 @@ import * as React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoCloseSharp } from 'react-icons/io5';
 import { IoMail } from 'react-icons/io5';
+import Logo from '@/assets/images/logo.png'
 import { Link } from 'react-scroll';
 
 export default function Navbar() {
@@ -31,7 +32,7 @@ export default function Navbar() {
       
             <a href="/">
               <img
-                src="src/assets/images/logo.png"
+                src={Logo}
                 width={220}
                 height={58}
                 alt="kay-bams"
