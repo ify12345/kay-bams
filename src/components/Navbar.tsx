@@ -86,8 +86,6 @@ export default function Navbar() {
                       className="cursor-pointer"
                       target='_blank'
                       href="https://docs.google.com/document/d/1JB2UpfFEdOGgvQcACjX4sm4EM0fLsXtoXZ21iT-9qEs/edit?usp=drivesdk"
-                      smooth={true}
-                      duration={500}
                       onClick={handleLinkClick}
                     >
                       My Resume
