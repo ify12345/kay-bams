@@ -9,11 +9,11 @@ import GoSvg from './GoSvg'
 import {Link} from 'react-scroll'
 
 const projectLinks = [
-  { imgSrc: Image1, link: 'https://example1.com',title:'Propadi' },
-  { imgSrc: Image2, link: 'https://example2.com',title:'ShadowCat' },
-  { imgSrc: Image3, link: 'https://example2.com',title:'Health Management Software' },
-  { imgSrc: Image4, link: 'https://example2.com',title:'Trucki' },
-  { imgSrc: Image5, link: 'https://example2.com',title:'Trucki Admin Web Portal' },
+  { imgSrc: Image1, link: 'https://www.figma.com/design/CNTE1C8kRhZAkB6FQkNJv4/Propadi-V1.0?node-id=1-4&t=PRz7Bs05UCk2giLn-1',title:'Propadi' },
+  { imgSrc: Image2, link: 'https://www.figma.com/design/JGF6IbdTtLg6aA2lqQECYz/ShadowChat?node-id=2-4&t=PRz7Bs05UCk2giLn-1',title:'ShadowCat' },
+  { imgSrc: Image3, link: 'https://www.figma.com/design/ANpIOFGSF5eN7mYUvG8sBJ/Health-Management-System?node-id=0-1&t=PRz7Bs05UCk2giLn-1',title:'Health Management Software' },
+  { imgSrc: Image4, link: 'https://www.figma.com/design/KlOBwWQFU3g7MZKkcO6mSO/Trucki?node-id=670-3626&m=dev',title:'Trucki' },
+  { imgSrc: Image5, link: 'https://www.figma.com/design/KlOBwWQFU3g7MZKkcO6mSO/Trucki?node-id=2807-5532&m=dev',title:'Trucki Admin Web Portal' },
 ]
 
 export default function OtherUi() {

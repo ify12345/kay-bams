@@ -82,15 +82,16 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li className="flex items-end justify-end">
-                    <Link
+                    <a
                       className="cursor-pointer"
-                      to="resume"
+                      target='_blank'
+                      href="https://docs.google.com/document/d/1JB2UpfFEdOGgvQcACjX4sm4EM0fLsXtoXZ21iT-9qEs/edit?usp=drivesdk"
                       smooth={true}
                       duration={500}
                       onClick={handleLinkClick}
                     >
                       My Resume
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
