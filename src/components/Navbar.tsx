@@ -28,7 +28,7 @@ export default function Navbar() {
     <main className="bg-[url('assets/images/grid-layer.png')] bg-cover bg-no-repeat bg-center relative z-30 text-white h-[700px]" id="home">
       <header className="h-24 top-0 w-full flex items-center text-white ">
         <div className="max-w-screen-2xl mx-auto px-4 lg:px-[120px] w-full flex items-center justify-between relative z-40">
-          <h1>
+      
             <a href="/">
               <img
                 src="src/assets/images/logo.png"
@@ -37,7 +37,7 @@ export default function Navbar() {
                 alt="kay-bams"
               />
             </a>
-          </h1>
+      
 
           <div className="hidden lg:flex items-center gap-[20px]">
             <button className="border border-[#55DB62] flex items-center py-[8px] px-[16px] gap-[8px] rounded-[40px]">
