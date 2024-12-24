@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  background-color: #090909;
+  @apply h-[200vh]
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

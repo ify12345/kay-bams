@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "allowJs": true,
+    "jsx": "react-jsx", // Use react-jsx if React 17+; switch to react if older
+    "target": "esnext",
+    "module": "esnext", // Use esnext for modern module resolution
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true, // Ensures compatibility with common JS modules
+    "skipLibCheck": true // Skips type checks for third-party libraries
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "src/**/*"
+  ]
+}
