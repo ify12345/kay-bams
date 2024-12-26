@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <main
-      className="bg-[url('assets/images/grid-layer.png')] bg-cover bg-no-repeat bg-center relative z-30 text-white min-h-[80vh] lg:h-[700px]"
+      className="bg-[url('assets/images/grid-layer.png')] bg-cover bg-no-repeat bg-center relative z-30 text-white h-full lg:h-[700px]"
       id="home"
     >
       <header className="h-24 top-0 w-full flex items-center text-white ">
