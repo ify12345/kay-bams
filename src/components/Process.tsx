@@ -78,7 +78,7 @@ export default function Process() {
     },
   ]
   return (
-    <div className="min-h-[100vh] lg:min-h-[100vh] py-10" id="process">
+    <div className="min-h-[30vh] lg:min-h-[70vh] pt-5" id="process">
       <div className="flex justify-between items-center px-3 lg:px-[120px]">
         <h1 className="text-3xl font-bold text-white">My Design Process</h1>
         <Link to="footer" className=" cursor-pointer">
@@ -86,7 +86,7 @@ export default function Process() {
         </Link>
       </div>
 
-      <div className="flex flex-col px-4 lg:px-[120px] gap-5 lg:gap-[40px] py-[64px]">
+      <div className="flex flex-col px-4 lg:px-[120px] gap-5 lg:gap-[40px] py-[24px]">
         {accordionData.map((item, index) => (
           <Accordion
             key={index}

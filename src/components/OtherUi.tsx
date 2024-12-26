@@ -18,7 +18,7 @@ const projectLinks = [
 
 export default function OtherUi() {
   return (
-    <div className="min-h-[100vh] lg:min-h-[100vh] py-6" id="otherui">
+    <div className="min-h-[50vh] lg:min-h-[70vh] py-6" id="otherui">
       <div className="flex justify-between items-center px-3 lg:px-[120px]">
         <h1 className="text-3xl font-bold text-white">Other UI Projects 👨🏽‍💻</h1>
         <Link to="process" className=" cursor-pointer">
