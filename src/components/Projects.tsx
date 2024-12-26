@@ -52,7 +52,7 @@ export default function Projects() {
 
       {/* Auto-Scrolling Section */}
       <div   className={`relative overflow-x-scroll w-full py-8 scrollbar-thin scrollbar-track-black/50 scrollbar-thumb-black ${
-          selectedCategory === 'web3' ? 'px-[120px]' : 'px-0'
+          selectedCategory === 'web3' ? 'flex justify-center items-center lg:justify-start lg:items-start px-5 lg:mx-0 lg:px-[120px]' : 'px-0'
         }`}>
         <div className="scroll-container flex items-center gap-6 animate-scroll">
           {projectsToDisplay.map((project, index) => (
@@ -68,7 +68,7 @@ export default function Projects() {
                 alt={`Project ${index + 1}`}
                 className="w-full h-[300px] lg:h-[588px] rounded-lg shadow-md"
               />
-              <div className="w-full flex justify-between pt-[24px]">
+              <div className="w-full flex justify-between pt-[24px] items-center">
                 <h2 className="text-sm lg:text-2xl font-bold text-white">{project.title}</h2>
                 <a
                   className="flex items-center text-white text-sm lg:text-[16px] gap-3"
