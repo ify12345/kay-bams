@@ -107,7 +107,7 @@ export default function Navbar() {
             </span>
           </p>
           <p className="text-center text-sm lg:text-[24px] leading-[36px]">
-            A digital product Designer with 4 years of experience working with
+            A digital product Designer with 5 years of experience working with
             startup founders and cross functional teams to help solve complex
             problems in a creative way.
           </p>
