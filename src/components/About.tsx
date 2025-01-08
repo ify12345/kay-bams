@@ -32,7 +32,7 @@ export default function About() {
           </p>
           <p className="text-base">
             Currently based in Lagos, Nigeria. I am a seasoned product designer
-            with 4 years of experience. I've had the privilege of working at
+            with 5 years of experience. I've had the privilege of working at
             both software development and startup companies, creating
             interactive experiences for digital products spanning fields such as
             health, real estate, entertainment and logistics.
