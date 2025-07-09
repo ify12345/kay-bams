@@ -8,20 +8,21 @@ import OtherUi from '@/components/OtherUi'
 import Project from '@/components/Project'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
+import { TranslationProvider } from '@/components/contexts/TranslationContext'
 
 
 const Home = () => {
   return (
-    <div className="">
-     <Navbar/>
-     <Experience/>
-     {/* <Projects/>
+    <TranslationProvider>
+      <Navbar />
+      <Experience />
+      {/* <Projects/>
      <About/>
      <Skills/>
      <OtherUi/> */}
-     <Project/>
-     <Footer/>
-    </div>
+      <Project />
+      <Footer />
+    </TranslationProvider>
   )
 }
 

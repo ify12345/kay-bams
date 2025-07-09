@@ -4,27 +4,17 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoCloseSharp } from 'react-icons/io5'
 import { IoMail } from 'react-icons/io5'
 import { IoChevronDown } from 'react-icons/io5'
-import Logo from '@/assets/images/logo.png'
 import { Link } from 'react-scroll'
-
-interface Language {
-  code: string
-  name: string
-  flag: string
-}
+import { useTranslation, languageConfig, Language } from '@/components/contexts/TranslationContext'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false)
   const [languageDropdownOpen, setLanguageDropdownOpen] = React.useState<boolean>(false)
-  const [selectedLanguage, setSelectedLanguage] = React.useState<string>('ENG')
+  
+  // Use translation hook
+  const { language, setLanguage, t } = useTranslation()
 
-  const languages: Language[] = [
-    { code: 'ENG', name: 'English', flag: '🇺🇸' },
-    { code: 'FRA', name: 'Français', flag: '🇫🇷' },
-    { code: 'ESP', name: 'Español', flag: '🇪🇸' }
-  ]
-
-  const currentLanguage = languages.find(lang => lang.code === selectedLanguage) || languages[0]
+  const currentLanguage = languageConfig.find(lang => lang.code === language) || languageConfig[0]
 
   React.useEffect(() => {
     if (menuOpen) {
@@ -44,8 +34,8 @@ export default function Navbar() {
   }
 
   // Function to handle language selection
-  const handleLanguageSelect = (languageCode: string) => {
-    setSelectedLanguage(languageCode)
+  const handleLanguageSelect = (languageCode: Language) => {
+    setLanguage(languageCode)
     setLanguageDropdownOpen(false)
   }
 
@@ -62,7 +52,7 @@ export default function Navbar() {
     return () => document.removeEventListener('click', handleClickOutside)
   }, [])
 
-  // Animation variants
+  // Animation variants (keeping the same animations)
   const headerVariants: Variants = {
     hidden: {
       opacity: 0,
@@ -247,11 +237,8 @@ export default function Navbar() {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <motion.img
-              src={Logo}
-              width={220}
-              height={58}
-              alt="kay-bams"
+            <motion.p
+            className='text-[18px] lg:text-[30px] font-medium'
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -259,7 +246,9 @@ export default function Navbar() {
                 ease: [0.25, 0.1, 0.25, 1],
                 delay: 0.2
               }}
-            />
+            >
+            Kayode Bamidele
+            </motion.p>
           </motion.a>
 
           <motion.div
@@ -287,14 +276,14 @@ export default function Navbar() {
                   ease: [0.25, 0.1, 0.25, 1]
                 }}
               />
-              <h1 className="text-[#55DB62]">Available for work</h1>
+              <h1 className="text-[#55DB62]">{t('availableForWork')}</h1>
             </motion.button>
 
             <motion.h1
               className="hidden lg:flex"
               variants={itemVariants}
             >
-              Designer based in Lagos, Nigeria
+              {t('designerLocation')}
             </motion.h1>
 
             {/* Language Switcher */}
@@ -334,11 +323,11 @@ export default function Navbar() {
                     animate="visible"
                     exit="exit"
                   >
-                    {languages.map((language) => (
+                    {languageConfig.map((lang) => (
                       <motion.button
-                        key={language.code}
-                        onClick={() => handleLanguageSelect(language.code)}
-                        className={`w-full flex items-center gap-2 px-3 py-2 text-left hover:bg-gray-100 transition-colors first:rounded-t-lg last:rounded-b-lg ${selectedLanguage === language.code ? 'bg-gray-50' : ''}`}
+                        key={lang.code}
+                        onClick={() => handleLanguageSelect(lang.code)}
+                        className={`w-full flex items-center gap-2 px-3 py-2 text-left hover:bg-gray-100 transition-colors first:rounded-t-lg last:rounded-b-lg ${language === lang.code ? 'bg-gray-50' : ''}`}
                         variants={dropdownItemVariants}
                         whileHover={{
                           backgroundColor: "#f3f4f6",
@@ -346,8 +335,8 @@ export default function Navbar() {
                           transition: { duration: 0.2 }
                         }}
                       >
-                        <span className="text-lg">{language.flag}</span>
-                        <span className="text-gray-800 font-medium">{language.name}</span>
+                        <span className="text-lg">{lang.flag}</span>
+                        <span className="text-gray-800 font-medium">{lang.name}</span>
                       </motion.button>
                     ))}
                   </motion.div>
@@ -426,7 +415,7 @@ export default function Navbar() {
                             transition: { duration: 0.3 }
                           }}
                         >
-                          About Me
+                          {t('aboutMe')}
                         </motion.span>
                       </Link>
                     </motion.li>
@@ -448,7 +437,7 @@ export default function Navbar() {
                             transition: { duration: 0.3 }
                           }}
                         >
-                          Projects
+                          {t('projects')}
                         </motion.span>
                       </Link>
                     </motion.li>
@@ -469,7 +458,7 @@ export default function Navbar() {
                             transition: { duration: 0.3 }
                           }}
                         >
-                          My Resume
+                          {t('myResume')}
                         </motion.span>
                       </a>
                     </motion.li>
@@ -512,24 +501,23 @@ export default function Navbar() {
                 ease: [0.25, 0.1, 0.25, 1]
               }}
             />
-            <h1 className="text-[#55DB62]">Available for work</h1>
+            <h1 className="text-[#55DB62]">{t('availableForWork')}</h1>
           </motion.button>
           <motion.p
-            className="text-[24px] lg:text-[80px] font-bold lg:leading-[150%] lg:-tracking-[1.5%] text-center"
+            className="text-[35px] lg:text-[80px] font-bold lg:leading-[150%] lg:-tracking-[1.5%] text-center"
             variants={heroTextVariants}
             whileHover={{
               scale: 1.02,
               transition: { duration: 0.3 }
             }}
           >
-            Mobile & Web Design Expert
+            {t('heroTitle')}
           </motion.p>
           <motion.p
             className="text-center text-sm lg:text-[16px] lg:leading-[150%] font-normal"
             variants={heroTextVariants}
           >
-            Hey, I'm KayBams — Product Designer for Startups & Scaling Businesses.
-            I design thoughtful web and mobile experiences that solve real problems and move businesses forward. From healthtech to eCommerce, logistics to SaaS — I help founders and teams turn big ideas into user-friendly, high-impact products.
+            {t('heroDescription')}
           </motion.p>
         </motion.div>
 
@@ -566,7 +554,7 @@ export default function Navbar() {
             <IoMail color="#A192E4" size={24} />
           </motion.div>
           <p className="text-black text-sm lg:text-[24px] leading-[36px] font-[500]">
-            Contact Me
+            {t('contactMe')}
           </p>
         </motion.a>
       </motion.div>

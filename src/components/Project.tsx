@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from 'react'
 import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { FaArrowDownLong } from 'react-icons/fa6'
 import { Link } from 'react-scroll'
+
 import pro1 from '@/assets/images/pro-1.png'
 import pro2 from '@/assets/images/pro-2.png'
 import pro3 from '@/assets/images/pro3.png'
@@ -11,14 +13,15 @@ import pro5 from '@/assets/images/pro5.png'
 import pro6 from '@/assets/images/pro6.png'
 import pro7 from '@/assets/images/pro7.png'
 import pro8 from '@/assets/images/pro8.png'
+import { useTranslation } from './contexts/TranslationContext'
 
 interface ProjectData {
   title: string
   titled: string
-  par1: string
-  par2: string
-  par3: string
-  par4?: string
+  par1Key: string
+  par2Key: string
+  par3Key: string
+  par4Key?: string
   image1?: string
   image2?: string
   projectUrl?: string
@@ -32,60 +35,9 @@ interface AccordionProps {
   index: number
 }
 
-const projectsData: ProjectData[] = [
-  {
-    title: 'NIMBLE  2025',
-    titled: 'NIMBLE',
-    par1: 'A grocery shopping app that allows users checkout all in under 30 seconds. Snap photo of products, pay instantly and quickly walk out of crowded stores.',
-    par2: 'I contributed to the design of the Recipes and Veggies features, and refined key existing components of the mobile app ahead of launch. By the time the app went live, it had already been downloaded by over 100 users.',
-    par3: 'Currently collaborating closely with the founder to shape features focused on customer retention, scalable growth, and achieving product-market fit.',
-    image1: pro1,
-    image2: pro2,
-    projectUrl: 'https://example.com/ecommerce-dashboard',
-    date: '2025',
-    color: '#074F51'
-  },
-  {
-    title: 'SIKERHUB 2025',
-    titled: 'SIKERHUB',
-    par1: 'SikerHub is a development and marketing agency that offers businesses and brands cutting  edge digital solutions ranging from creative design, web development to data analysis.',
-    par2: 'Designed a mobile-responsive website for SikerHub to establish a strong digital presence and effectively convert visitors into paying customers.',
-    par3: 'The result was a fully responsive website, strategically designed with conversion rate optimization in mind to boost user engagement and drive conversions.',
-    par4: 'Ahead of launch, I projected an 80%+ session duration and daily traffic of 100-300 visitors. The site was designed with performance and conversion in mind, tracking key metrics like bounce rate, engagement time, and conversion rate to measure success.',
-    image1: pro3,
-    image2: pro4,
-    projectUrl: 'https://example.com/ecommerce-dashboard',
-    date: '2025',
-    color: '#0096FF'
-  },
-  {
-    title: 'BREEZA 2024',
-    titled: 'BREEZA',
-    par1: 'Breeza is platform where beauty and wellness professionals connect with customers, provides tools to manage bookings, that offers a wider range of services, including home service, promotes community engagement and helps professionals grow their business. Offers personalized e-commerce shops and franchise-ready features.',
-    par2: 'Redesigned Breeza\'s website to align with its new product direction, and contributed to the design of both the client-facing and customer-facing mobile apps.',
-    par3: 'Due to difficulties onboarding beauty professionals, the team made a strategic decision to temporarily pause regular operations and reassess the platform\'s onboarding approach.',
-    image1: pro5,
-    image2: pro6,
-    projectUrl: 'https://example.com/ecommerce-dashboard',
-    date: '2024',
-    color: '#6C3530'
-  },
-  {
-    title: 'CLOUDCLINIC  2024',
-    titled: 'CLOUDCLINIC',
-    par1: 'CloudClinic is a telehealth app that connects people with licensed doctors, specialists, and health facilities in real-time, bring the full, but more convenient hospital experience to your home or office.',
-    par2: 'As the sole designer on the project, I led the end-to-end design of the web app, admin portal, and key user-facing features like "Find Me a Doctor." I also revamped the partners\' app used by healthcare providers, redesigned the onboarding and sign-up flow, and improved multiple core experiences — delivering a cohesive, user-centered product across the board.',
-    par3: 'Boosted user sign-ups by 25% through a redesigned onboarding flow, which reduced friction by shifting patients health data collection to the doctors\' end and contributed to 1K+ app downloads on Google Play Store by simplifying the user journey.',
-    image1: pro7,
-    image2: pro8,
-    projectUrl: 'https://example.com/ecommerce-dashboard',
-    date: '2024',
-    color: '#2CBCEF'
-  },
-]
-
 const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => {
   const [isOpen, setIsOpen] = React.useState(true)
+  const { t } = useTranslation()
 
   // Animation variants
   const accordionVariants: Variants = {
@@ -247,7 +199,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <p className="text-base text-[#CCCCCC] leading-relaxed">{project.par1}</p>
+                  <p className="text-base text-[#CCCCCC] leading-relaxed">{t(project.par1Key as any)}</p>
                 </motion.div>
                 
                 <motion.div 
@@ -257,7 +209,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <p className="text-base text-[#CCCCCC] leading-relaxed">{project.par2}</p>
+                  <p className="text-base text-[#CCCCCC] leading-relaxed">{t(project.par2Key as any)}</p>
                 </motion.div>
                 
                 <motion.div 
@@ -267,10 +219,10 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <p className="text-base text-[#CCCCCC] leading-relaxed">{project.par3}</p>
+                  <p className="text-base text-[#CCCCCC] leading-relaxed">{t(project.par3Key as any)}</p>
                 </motion.div>
                 
-                {project.par4 && (
+                {project.par4Key && (
                   <motion.div 
                     variants={textVariants}
                     whileHover={{
@@ -278,7 +230,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                       transition: { duration: 0.2 }
                     }}
                   >
-                    <p className="text-base text-[#CCCCCC] leading-relaxed">{project.par4}</p>
+                    <p className="text-base text-[#CCCCCC] leading-relaxed">{t(project.par4Key as any)}</p>
                   </motion.div>
                 )}
               </motion.div>
@@ -344,6 +296,60 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
 }
 
 export default function Project() {
+  const { t } = useTranslation()
+  
+  const projectsData: ProjectData[] = [
+    {
+      title: 'NIMBLE  2025',
+      titled: t('nimbleTitle'),
+      par1Key: 'nimbleDescription1',
+      par2Key: 'nimbleDescription2',
+      par3Key: 'nimbleDescription3',
+      image1: pro1,
+      image2: pro2,
+      projectUrl: 'https://example.com/ecommerce-dashboard',
+      date: '2025',
+      color: '#074F51'
+    },
+    {
+      title: 'SIKERHUB 2025',
+      titled: t('sikerhubTitle'),
+      par1Key: 'sikerhubDescription1',
+      par2Key: 'sikerhubDescription2',
+      par3Key: 'sikerhubDescription3',
+      par4Key: 'sikerhubDescription4',
+      image1: pro3,
+      image2: pro4,
+      projectUrl: 'https://example.com/ecommerce-dashboard',
+      date: '2025',
+      color: '#0096FF'
+    },
+    {
+      title: 'BREEZA 2024',
+      titled: t('breezaTitle'),
+      par1Key: 'breezaDescription1',
+      par2Key: 'breezaDescription2',
+      par3Key: 'breezaDescription3',
+      image1: pro5,
+      image2: pro6,
+      projectUrl: 'https://example.com/ecommerce-dashboard',
+      date: '2024',
+      color: '#6C3530'
+    },
+    {
+      title: 'CLOUDCLINIC  2024',
+      titled: t('cloudclinicTitle'),
+      par1Key: 'cloudclinicDescription1',
+      par2Key: 'cloudclinicDescription2',
+      par3Key: 'cloudclinicDescription3',
+      image1: pro7,
+      image2: pro8,
+      projectUrl: 'https://example.com/ecommerce-dashboard',
+      date: '2024',
+      color: '#2CBCEF'
+    },
+  ]
+
   // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
