@@ -24,7 +24,7 @@ export default function Experience() {
         </div>
         <div className="flex flex-col gap-4 items-start">
           <p className='text-[#808080] text-2xl'>{t('startupIdeaExploration')}</p>
-          <a target='_blank' href="" className="text-2xl underline text-white">Farmzely</a>
+          <a target='_blank' href="https://farmezly.com.ng/" className="text-2xl underline text-white">Farmezly</a>
           <a target='_blank' href="" className="text-2xl underline text-white">SiteScope</a>
         </div>
       </div>
