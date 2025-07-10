@@ -3,10 +3,12 @@
 import FrenchSvg from '@/assets/svg/FrenchSvg'
 import SpanishSvg from '@/assets/svg/SpanishSvg'
 import UkSvg from '@/assets/svg/Uksvg'
+import GermanSvg from '@/assets/svg/GermanSvg'
+import ArabicSvg from '@/assets/svg/ArabicSvg'
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
 // Define supported languages
-export type Language = 'ENG' | 'FRA' | 'ESP'
+export type Language = 'ENG' | 'FRA' | 'ESP' | 'DEU' | 'ARA'
 
 // Define translation keys structure
 interface Translations {
@@ -190,6 +192,90 @@ const translations: Record<Language, Translations> = {
     cloudclinicDescription1: "CloudClinic es una aplicación de telesalud que conecta a las personas con médicos licenciados, especialistas e instalaciones de salud en tiempo real, trayendo la experiencia hospitalaria completa, pero más conveniente, a tu hogar u oficina.",
     cloudclinicDescription2: "Como el único diseñador en el proyecto, lideré el diseño de extremo a extremo de la aplicación web, portal de administración y funciones clave orientadas al usuario como \"Encuéntrame un médico\". También renové la aplicación de socios utilizada por proveedores de atención médica, rediseñé el flujo de incorporación e inscripción, y mejoré múltiples experiencias centrales — entregando un producto cohesivo y centrado en el usuario en todos los ámbitos.",
     cloudclinicDescription3: "Aumenté las inscripciones de usuarios en un 25% a través de un flujo de incorporación rediseñado, que redujo la fricción al cambiar la recolección de datos de salud de los pacientes al lado de los médicos y contribuyó a 1K+ descargas de aplicaciones en Google Play Store al simplificar el recorrido del usuario."
+  },
+  DEU: {
+    availableForWork: "Verfügbar für Arbeit",
+    designerLocation: "Designer mit Sitz in Lagos, Nigeria",
+    aboutMe: "Über mich",
+    projects: "Projekte",
+    myResume: "Mein Lebenslauf",
+    contactMe: "Kontaktiere mich",
+    heroTitle: "Mobile & Web Design Experte",
+    heroDescription: "Hey, ich bin KayBams — Produktdesigner für Startups und wachsende Unternehmen. Ich entwerfe durchdachte Web- und Mobile-Erlebnisse, die echte Probleme lösen und Unternehmen voranbringen. Von Healthtech bis eCommerce, Logistik bis SaaS — ich helfe Gründern und Teams dabei, große Ideen in benutzerfreundliche, wirkungsvolle Produkte zu verwandeln.",
+    aboutTitle: "Über mich",
+    aboutDescription: "Erfahre mehr über meinen Hintergrund und meine Erfahrungen",
+    projectsTitle: "Projekte",
+    projectsDescription: "Entdecke meine neuesten Arbeiten und Fallstudien",
+    currently: "DERZEIT",
+    previously: "ZUVOR",
+    startupIdeaExploration: "STARTUP-IDEEN ERKUNDUNG",
+    footerText: "© 2024 Kayode Bamidele. Alle Rechte vorbehalten.",
+    footerCallToAction: "Lass uns zusammen an etwas Großartigem arbeiten!🤝",
+    thanksForVisiting: "Danke für deinen Besuch",
+    
+    // Project descriptions
+    nimbleTitle: "NIMBLE",
+    nimbleDescription1: "Eine Lebensmittel-Shopping-App, die es Benutzern ermöglicht, in unter 30 Sekunden auszuchecken. Mache ein Foto von Produkten, zahle sofort und verlasse schnell überfüllte Geschäfte.",
+    nimbleDescription2: "Ich habe zum Design der Rezepte- und Gemüse-Features beigetragen und wichtige bestehende Komponenten der mobilen App vor dem Launch verfeinert. Zum Zeitpunkt des Launches war die App bereits von über 100 Benutzern heruntergeladen worden.",
+    nimbleDescription3: "Arbeite derzeit eng mit dem Gründer zusammen, um Features zu gestalten, die auf Kundenbindung, skalierbare Wachstum und die Erreichung des Produkt-Markt-Fits fokussiert sind.",
+    
+    sikerhubTitle: "SIKERHUB",
+    sikerhubDescription1: "SikerHub ist eine Entwicklungs- und Marketing-Agentur, die Unternehmen und Marken modernste digitale Lösungen anbietet, von kreativem Design über Webentwicklung bis hin zur Datenanalyse.",
+    sikerhubDescription2: "Entwarf eine mobile-responsive Website für SikerHub, um eine starke digitale Präsenz zu etablieren und Besucher effektiv in zahlende Kunden zu verwandeln.",
+    sikerhubDescription3: "Das Ergebnis war eine vollständig responsive Website, strategisch entworfen mit Conversion-Rate-Optimierung im Hinterkopf, um Benutzerengagement zu steigern und Conversions zu fördern.",
+    sikerhubDescription4: "Vor dem Launch prognostizierte ich eine 80%+ Sitzungsdauer und täglichen Traffic von 100-300 Besuchern. Die Website wurde mit Performance und Conversion im Hinterkopf entworfen, verfolgt wichtige Metriken wie Bounce-Rate, Engagement-Zeit und Conversion-Rate, um den Erfolg zu messen.",
+    
+    breezaTitle: "BREEZA",
+    breezaDescription1: "Breeza ist eine Plattform, auf der sich Schönheits- und Wellness-Profis mit Kunden verbinden, bietet Tools zur Verwaltung von Buchungen, bietet eine größere Auswahl an Dienstleistungen, einschließlich Hausservice, fördert Community-Engagement und hilft Profis beim Wachstum ihres Geschäfts. Bietet personalisierte E-Commerce-Shops und franchise-ready Features.",
+    breezaDescription2: "Redesignte Breezas Website, um sie mit ihrer neuen Produktrichtung zu synchronisieren, und trug zum Design sowohl der kunden- als auch der verbraucherorientierten mobilen Apps bei.",
+    breezaDescription3: "Aufgrund von Schwierigkeiten beim Onboarding von Schönheitsprofis traf das Team eine strategische Entscheidung, den regulären Betrieb vorübergehend zu pausieren und den Onboarding-Ansatz der Plattform zu überdenken.",
+    
+    cloudclinicTitle: "CLOUDCLINIC",
+    cloudclinicDescription1: "CloudClinic ist eine Telehealth-App, die Menschen mit lizenzierten Ärzten, Spezialisten und Gesundheitseinrichtungen in Echtzeit verbindet und die vollständige, aber bequemere Krankenhauserfahrung nach Hause oder ins Büro bringt.",
+    cloudclinicDescription2: "Als einziger Designer im Projekt leitete ich das End-to-End-Design der Web-App, des Admin-Portals und wichtiger benutzerorientierter Features wie \"Finde mir einen Arzt\". Ich überarbeitete auch die Partner-App, die von Gesundheitsdienstleistern verwendet wird, redesignte den Onboarding- und Anmeldefluss und verbesserte mehrere Kernerfahrungen — lieferte ein kohärentes, benutzerzentriertes Produkt rundum.",
+    cloudclinicDescription3: "Steigerte Benutzeranmeldungen um 25% durch einen redesignten Onboarding-Flow, der Reibung reduzierte, indem die Sammlung von Patientengesundheitsdaten auf die Ärzte verlagert wurde und zu 1K+ App-Downloads im Google Play Store beitrug, indem die Benutzerreise vereinfacht wurde."
+  },
+  ARA: {
+    availableForWork: "متاح للعمل",
+    designerLocation: "مصمم مقيم في لاجوس، نيجيريا",
+    aboutMe: "نبذة عني",
+    projects: "المشاريع",
+    myResume: "سيرتي الذاتية",
+    contactMe: "تواصل معي",
+    heroTitle: "خبير تصميم الهواتف المحمولة والويب",
+    heroDescription: "مرحباً، أنا KayBams — مصمم منتجات للشركات الناشئة والشركات المتنامية. أصمم تجارب ويب وهاتف محمول مدروسة تحل مشاكل حقيقية وتقدم الأعمال إلى الأمام. من تكنولوجيا الصحة إلى التجارة الإلكترونية، من اللوجستيات إلى SaaS — أساعد المؤسسين والفرق على تحويل الأفكار الكبيرة إلى منتجات سهلة الاستخدام وعالية التأثير.",
+    aboutTitle: "نبذة",
+    aboutDescription: "تعرف أكثر على خلفيتي وخبرتي",
+    projectsTitle: "المشاريع",
+    projectsDescription: "اكتشف أحدث أعمالي ودراسات الحالة",
+    currently: "حالياً",
+    previously: "سابقاً",
+    startupIdeaExploration: "استكشاف أفكار الشركات الناشئة",
+    footerText: "© 2024 كايود باميديلي. جميع الحقوق محفوظة.",
+    footerCallToAction: "دعنا نعمل معاً على شيء رائع!🤝",
+    thanksForVisiting: "شكراً لزيارتك",
+    
+    // Project descriptions
+    nimbleTitle: "نيمبل",
+    nimbleDescription1: "تطبيق تسوق بقالة يسمح للمستخدمين بالدفع في أقل من 30 ثانية. التقط صورة للمنتجات، ادفع فوراً واخرج بسرعة من المتاجر المزدحمة.",
+    nimbleDescription2: "ساهمت في تصميم ميزات الوصفات والخضروات، وحسّنت المكونات الأساسية الموجودة في التطبيق المحمول قبل الإطلاق. بحلول وقت إطلاق التطبيق، كان قد تم تنزيله بالفعل من قبل أكثر من 100 مستخدم.",
+    nimbleDescription3: "أتعاون حالياً بشكل وثيق مع المؤسس لتشكيل ميزات تركز على الاحتفاظ بالعملاء، والنمو القابل للتوسع، وتحقيق ملائمة المنتج للسوق.",
+    
+    sikerhubTitle: "سيكرهب",
+    sikerhubDescription1: "SikerHub هي وكالة تطوير وتسويق تقدم للشركات والعلامات التجارية حلول رقمية متطورة تتراوح من التصميم الإبداعي وتطوير الويب إلى تحليل البيانات.",
+    sikerhubDescription2: "صممت موقع ويب متجاوب مع الهاتف المحمول لـ SikerHub لتأسيس حضور رقمي قوي وتحويل الزوار بفعالية إلى عملاء يدفعون.",
+    sikerhubDescription3: "كانت النتيجة موقع ويب مستجيب بالكامل، مصمم استراتيجياً مع تحسين معدل التحويل في الاعتبار لتعزيز مشاركة المستخدم وقيادة التحويلات.",
+    sikerhubDescription4: "قبل الإطلاق، توقعت مدة جلسة 80%+ وحركة مرور يومية من 100-300 زائر. تم تصميم الموقع مع الأداء والتحويل في الاعتبار، وتتبع المقاييس الرئيسية مثل معدل الارتداد ووقت المشاركة ومعدل التحويل لقياس النجاح.",
+    
+    breezaTitle: "بريزا",
+    breezaDescription1: "Breeza هي منصة حيث يتصل محترفو الجمال والعافية مع العملاء، توفر أدوات لإدارة الحجوزات، تقدم مجموعة أوسع من الخدمات، بما في ذلك الخدمة المنزلية، تعزز المشاركة المجتمعية وتساعد المحترفين على تنمية أعمالهم. تقدم متاجر التجارة الإلكترونية المخصصة وميزات جاهزة للامتياز.",
+    breezaDescription2: "أعدت تصميم موقع Breeza لمواءمته مع اتجاه منتجه الجديد، وساهمت في تصميم كل من التطبيقات المحمولة الموجهة للعملاء والعملاء.",
+    breezaDescription3: "بسبب الصعوبات في إدماج محترفي الجمال، اتخذ الفريق قراراً استراتيجياً لإيقاف العمليات العادية مؤقتاً وإعادة تقييم نهج الإدماج في المنصة.",
+    
+    cloudclinicTitle: "كلاودكلينك",
+    cloudclinicDescription1: "CloudClinic هو تطبيق صحة إلكترونية يربط الناس بأطباء مرخصين ومتخصصين ومرافق صحية في الوقت الفعلي، يجلب تجربة المستشفى الكاملة ولكن الأكثر راحة إلى منزلك أو مكتبك.",
+    cloudclinicDescription2: "كوني المصمم الوحيد في المشروع، قدت التصميم من النهاية إلى النهاية لتطبيق الويب وبوابة الإدارة والميزات الرئيسية الموجهة للمستخدم مثل \"ابحث لي عن طبيب\". كما قمت بتجديد تطبيق الشركاء المستخدم من قبل مقدمي الرعاية الصحية، وأعدت تصميم تدفق الإدماج والتسجيل، وحسّنت تجارب أساسية متعددة — مقدماً منتجاً متماسكاً ومتمحوراً حول المستخدم في جميع الجوانب.",
+    cloudclinicDescription3: "عززت تسجيلات المستخدمين بنسبة 25% من خلال تدفق إدماج معاد تصميمه، مما قلل الاحتكاك بنقل جمع بيانات صحة المرضى إلى جانب الأطباء وساهم في 1K+ تنزيل تطبيق على متجر Google Play بتبسيط رحلة المستخدم."
   }
 }
 
@@ -210,7 +296,7 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({ childr
   const [language, setLanguage] = useState<Language>(() => {
     // Try to get saved language from localStorage, fallback to 'ENG'
     const savedLanguage = localStorage.getItem('selectedLanguage') as Language
-    return savedLanguage && ['ENG', 'FRA', 'ESP'].includes(savedLanguage) ? savedLanguage : 'ENG'
+    return savedLanguage && ['ENG', 'FRA', 'ESP', 'DEU', 'ARA'].includes(savedLanguage) ? savedLanguage : 'ENG'
   })
 
   // Save language preference to localStorage
@@ -249,5 +335,7 @@ export const useTranslation = () => {
 export const languageConfig = [
   { code: 'ENG' as Language, name: 'English', flag: <UkSvg/> },
   { code: 'FRA' as Language, name: 'Français', flag: <FrenchSvg/> },
-  { code: 'ESP' as Language, name: 'Español', flag: <SpanishSvg/> }
+  { code: 'ESP' as Language, name: 'Español', flag: <SpanishSvg/> },
+  { code: 'DEU' as Language, name: 'Deutsch', flag: <GermanSvg/> },
+  { code: 'ARA' as Language, name: 'Arabic', flag: <ArabicSvg/> }
 ]
