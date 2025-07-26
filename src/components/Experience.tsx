@@ -26,7 +26,7 @@ export default function Experience() {
           <p className='text-[#808080] text-2xl'>{t('startupIdeaExploration')}</p>
           <a target='_blank' href="https://farmezly.com.ng/" className="text-2xl underline text-white">Farmezly</a>
           <a target='_blank' href="" className="text-2xl underline text-white">SiteScope</a>
-          <a target='_blank' href="https://cent.fef.solutions/" className="text-2xl underline text-white">Cent DApp</a>
+          <a target='_blank' href="https://cent.fef.solutions/?referrer=kay_shib" className="text-2xl underline text-white">Cent DApp</a>
         </div>
       </div>
     </div>
