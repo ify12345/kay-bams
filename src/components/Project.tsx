@@ -343,7 +343,7 @@ export default function Project() {
       color: '#074F51'
     },
     {
-      title: 'NIMBLE  2025',
+      title: 'SANDOUQI 2025',
       titled: t('sandTitle'),
       par1Key: 'sandDescription1',
       par2Key: 'sandDescription2',
