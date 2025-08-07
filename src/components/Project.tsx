@@ -13,6 +13,10 @@ import pro5 from '@/assets/images/pro5.png'
 import pro6 from '@/assets/images/pro6.png'
 import pro7 from '@/assets/images/pro7.png'
 import pro8 from '@/assets/images/pro8.png'
+import pro9 from '@/assets/images/pro9.png'
+import pro10 from '@/assets/images/pro10.png'
+import pro11 from '@/assets/images/pro11.png'
+import pro12 from '@/assets/images/pro12.png'
 import { useTranslation } from './contexts/TranslationContext'
 
 interface ProjectData {
@@ -41,14 +45,14 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
 
   // Animation variants
   const accordionVariants: Variants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
         delay: index * 0.1,
         ease: [0.25, 0.1, 0.25, 1]
@@ -57,14 +61,14 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
   }
 
   const contentVariants: Variants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       height: 0
     },
-    visible: { 
+    visible: {
       opacity: 1,
       height: "auto",
-      transition: { 
+      transition: {
         duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1],
         staggerChildren: 0.1
@@ -73,14 +77,14 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
   }
 
   const itemVariants: Variants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 20
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.5,
         ease: [0.25, 0.1, 0.25, 1]
       }
@@ -88,16 +92,16 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
   }
 
   const imageVariants: Variants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       scale: 0.8,
       y: 30
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.7,
         ease: [0.25, 0.1, 0.25, 1]
       }
@@ -105,22 +109,43 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
   }
 
   const textVariants: Variants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       x: -30
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { 
+      transition: {
         duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1]
       }
     }
   }
+  const htmlContentStyles = `
+    ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    
+    li:last-child {
+      margin-bottom: 0;
+    }
+    
+    strong {
+      color: #ffffff;
+      font-weight: 600;
+    }`
 
   return (
-    <motion.div 
+    <motion.div
       className="py-6 w-full text-white border-b border-gray-700/30"
       variants={accordionVariants}
       initial="hidden"
@@ -130,7 +155,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
       <motion.div
         className="flex justify-between items-start cursor-pointer mb-4"
         onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ 
+        whileHover={{
           scale: 1.01,
           transition: { duration: 0.2 }
         }}
@@ -146,13 +171,13 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
         >
           {project.title}
         </motion.h3>
-        <motion.span 
+        <motion.span
           className="text-3xl font-light ml-4 flex-shrink-0"
-          animate={{ 
+          animate={{
             rotate: isOpen ? 0 : 0,
             scale: isOpen ? 1.1 : 1
           }}
-          transition={{ 
+          transition={{
             duration: 0.3,
             ease: [0.25, 0.1, 0.25, 1]
           }}
@@ -163,7 +188,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
 
       <AnimatePresence mode="wait">
         {isOpen && (
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-6 overflow-hidden"
             variants={contentVariants}
             initial="hidden"
@@ -171,7 +196,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
             exit="hidden"
           >
             {/* Project Details - Left Side */}
-            <motion.div 
+            <motion.div
               className="space-y-6"
               variants={itemVariants}
             >
@@ -183,8 +208,8 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                   {project.titled}
                 </h4>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className='flex flex-col gap-8 text-base text-white text-justify max-w-[400px]'
                 variants={itemVariants}
               >
@@ -192,7 +217,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                   <p className="text-2xl text-[#808494]">{project.date}</p>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   variants={textVariants}
                   whileHover={{
                     x: 10,
@@ -201,29 +226,35 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                 >
                   <p className="text-base text-[#CCCCCC] leading-relaxed">{t(project.par1Key as any)}</p>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   variants={textVariants}
                   whileHover={{
                     x: 10,
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <p className="text-base text-[#CCCCCC] leading-relaxed">{t(project.par2Key as any)}</p>
+                  <div 
+                    className="text-base text-[#CCCCCC] leading-relaxed [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mt-2 [&_ul]:mb-2 [&_li]:mb-3 [&_li]:leading-relaxed [&_li:last-child]:mb-0 [&_strong]:text-white [&_strong]:font-semibold"
+                    dangerouslySetInnerHTML={{ __html: t(project.par2Key as any) }}
+                  />
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   variants={textVariants}
                   whileHover={{
                     x: 10,
                     transition: { duration: 0.2 }
                   }}
                 >
-                  <p className="text-base text-[#CCCCCC] leading-relaxed">{t(project.par3Key as any)}</p>
+                  <div 
+                    className="text-base text-[#CCCCCC] leading-relaxed [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mt-2 [&_ul]:mb-2 [&_li]:mb-3 [&_li]:leading-relaxed [&_li:last-child]:mb-0 [&_strong]:text-white [&_strong]:font-semibold"
+                    dangerouslySetInnerHTML={{ __html: t(project.par3Key as any) }}
+                  />
                 </motion.div>
-                
+
                 {project.par4Key && (
-                  <motion.div 
+                  <motion.div
                     variants={textVariants}
                     whileHover={{
                       x: 10,
@@ -237,7 +268,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
             </motion.div>
 
             {/* Project Image - Right Side */}
-            <motion.div 
+            <motion.div
               className="flex items-center justify-center"
               variants={itemVariants}
             >
@@ -251,26 +282,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                   whileHover={{
                     scale: 1.02,
                     rotateY: 5,
-                    transition: { 
-                      duration: 0.3,
-                      ease: [0.25, 0.1, 0.25, 1]
-                    }
-                  }}
-                  style={{
-                    transformStyle: "preserve-3d"
-                  }}
-                />
-                
-                <motion.img
-                  src={project.image2}
-                  alt={`${project.title} preview`}
-                  className="w-full h-auto rounded-lg shadow-2xl border border-gray-700/30"
-                  loading="lazy"
-                  variants={imageVariants}
-                  whileHover={{
-                    scale: 1.02,
-                    rotateY: -5,
-                    transition: { 
+                    transition: {
                       duration: 0.3,
                       ease: [0.25, 0.1, 0.25, 1]
                     }
@@ -280,7 +292,26 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
                   }}
                 />
 
-                <motion.div 
+                <motion.img
+                  src={project.image2}
+                  alt={`${project.title} preview`}
+                  className="w-full h-auto rounded-lg shadow-2xl border border-gray-700/30"
+                  loading="lazy"
+                  variants={imageVariants}
+                  whileHover={{
+                    scale: 1.02,
+                    rotateY: -5,
+                    transition: {
+                      duration: 0.3,
+                      ease: [0.25, 0.1, 0.25, 1]
+                    }
+                  }}
+                  style={{
+                    transformStyle: "preserve-3d"
+                  }}
+                />
+
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg pointer-events-none"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -297,7 +328,7 @@ const Accordion: React.FC<AccordionProps> = ({ project, isLastItem, index }) => 
 
 export default function Project() {
   const { t } = useTranslation()
-  
+
   const projectsData: ProjectData[] = [
     {
       title: 'NIMBLE  2025',
@@ -310,6 +341,18 @@ export default function Project() {
       projectUrl: 'https://example.com/ecommerce-dashboard',
       date: '2025',
       color: '#074F51'
+    },
+    {
+      title: 'NIMBLE  2025',
+      titled: t('sandTitle'),
+      par1Key: 'sandDescription1',
+      par2Key: 'sandDescription2',
+      par3Key: 'sandDescription3',
+      image1: pro11,
+      image2: pro12,
+      projectUrl: 'https://example.com/ecommerce-dashboard',
+      date: '2025',
+      color: '#FFF'
     },
     {
       title: 'SIKERHUB 2025',
@@ -335,6 +378,18 @@ export default function Project() {
       projectUrl: 'https://example.com/ecommerce-dashboard',
       date: '2024',
       color: '#6C3530'
+    },
+    {
+      title: 'PEEK 2024',
+      titled: t('peekTitle'),
+      par1Key: 'peekDescription1',
+      par2Key: 'peekDescription2',
+      par3Key: 'peekDescription3',
+      image1: pro9,
+      image2: pro10,
+      projectUrl: 'https://example.com/ecommerce-dashboard',
+      date: '2024',
+      color: '#E1C699'
     },
     {
       title: 'CLOUDCLINIC  2024',
@@ -363,8 +418,8 @@ export default function Project() {
   }
 
   return (
-    <motion.div 
-      className="min-h-screen bg-black" 
+    <motion.div
+      className="min-h-screen bg-black"
       id="projects"
       initial="hidden"
       whileInView="visible"
@@ -372,7 +427,7 @@ export default function Project() {
       variants={containerVariants}
     >
       {/* Projects Accordion */}
-      <motion.div 
+      <motion.div
         className="px-4 lg:px-[100px] pb-12"
         variants={containerVariants}
       >
