@@ -16,10 +16,6 @@ const Home = () => {
     <TranslationProvider>
       <Navbar />
       <Experience />
-      {/* <Projects/>
-     <About/>
-     <Skills/>
-     <OtherUi/> */}
       <Project />
       <Footer />
     </TranslationProvider>

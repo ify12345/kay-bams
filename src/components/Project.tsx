@@ -419,7 +419,7 @@ export default function Project() {
 
   return (
     <motion.div
-      className="min-h-screen bg-black"
+      className="h-full lg:min-h-screen "
       id="projects"
       initial="hidden"
       whileInView="visible"
