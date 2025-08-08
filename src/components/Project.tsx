@@ -418,13 +418,10 @@ export default function Project() {
   }
 
   return (
-    <motion.div
-      className="h-full lg:min-h-screen "
+    <div
+      className="min-h-[50vh] lg:min-h-[50vh] bg-[url('assets/images/grid-layer.png')] bg-cover bg-no-repeat bg-center"
       id="projects"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      variants={containerVariants}
+     
     >
       {/* Projects Accordion */}
       <motion.div
@@ -442,6 +439,6 @@ export default function Project() {
           ))}
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
